@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="navigation" content="width=device-width,initial-scale=1.0">
+        <title>PANKY</title>
+        <link rel="stylesheet" href="../static/css/transfer.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Google fonts -->
+    </head>
+    <body>
+        <div class="container">
+            <header class="customer-header">
+                <div class="div-logo">
+                    <img src="../static/bank.png">
+                </div>
+                <nav class="customer-nav">
+                    <a href="{{url_for('Home')}}">Back</a>
+                    
+                </nav>
+                </header>
+                </div>
+
+            </header>
+            <div class="transfer_form">
+                <h1>MONEY TRANSFER</h1>
+                {% with messages=get_flashed_messages() %} 
+                    {% if messages %} 
+                        {% for message in messages %} 
+                        {% if flag==1 %}
+                        <div class="alert alert-success alert-dismissible" style="width: 300px;margin: auto;">                   
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>                    
+                            <strong> {{ message }} </strong> 
+                        </div>
+                        {% else %}
+                        <div class="alert alert-danger alert-dismissible" style="width: 300px;margin: auto;">                   
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>                    
+                            <strong> {{ message }} </strong> 
+                        </div>
+                        {% endif %}
+                        {% endfor %} 
+                    {% endif %} 
+                {% endwith %} 
+                <br>
+                <div class="form">
+                    <form action="{{ url_for('Money_transfer') }}" method="post">
+                        <div class="row">
+                            <div class="col-sm-6 heading">
+                                <h3>Sender Name</h3>
+                                <h3>Sender Acc</h3>
+                                <h3>Receiver Name</h3>
+                                <h3>Receiver Acc</h3>
+                                <h3>Amount</h3>                        
+                            </div>
+                            <div class="col-sm-6">
+                                <h3><input type="text" name="sname" required></h3>
+                                <h3><input type="number" name="sacc" required></h3>
+                                <h3><input type="text" name="rname" required></h3>
+                                <h3><input type="number" name="racc" required></h3>
+                                <h3><input type="number" name="amt" required></h3>                        
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-6 heading">
+                                <button type="reset" class="btn btn-dark">Reset</button>
+                            </div>
+                            <div class="col-sm-6 ">
+                                <button type="submit" class="btn btn-dark">Transfer</button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <footer class="footer">
+                <div class="footer-text">
+                    Copyright@2021 sparks
+                </div>
+                <div class="footer-img">
+                    <a href="http://www.facebook.com"><img src="../static/facebook.png"></a>
+                    <a href="http://www.twitter.com"><img src="../static/twitter.png"></a>
+                    <a href="http://www.instagram.com"><img src="../static/instagram.png"></a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

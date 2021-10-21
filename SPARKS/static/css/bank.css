@@ -1,0 +1,82 @@
+
+.bank-header{
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    width: 100%;
+    background-color: #139139;
+    z-index: 100;
+}
+.div-logo{
+    height: 100%;
+    text-align: center;
+    margin: 20px;
+    float:left;
+    position: fixed;
+    left: 150px;
+    top: 10px;
+}
+.bank-nav{
+    float: right;
+    height: 100%;
+    background-color: #139139;
+}
+.bank-nav a {
+    color: white;
+    font-size: 22px;
+    float: right;
+    font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 14px 16px;
+    
+
+}
+.main{
+    position:absolute;
+    top:78px;
+    right:0px;
+    margin: 0px;
+    width: 100%;
+    font-family:Helvetica;
+}
+.main-image{
+    background-image: url("../save-money.png");
+    width:20%;
+    height: 320px;
+    background-repeat: round;
+    text-align: center;
+    margin-top: 120px;
+    float: left;
+   
+   
+}
+.main-text {
+    float: right;
+    font-family: "Helvetica Neue";
+    font-size: 22px;
+    font-weight: 700;
+    color:black;
+   
+    top:40%;
+    text-decoration: none;
+}
+
+.footer {
+    height: 100px;
+    background-color: #139139;
+    margin-top: 550px;
+}
+.footer-text {
+    font-size: 15px;
+    margin-left: 70px;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+
+}
+.footer-img {
+    float:right;
+    margin-left: 750px;
+    margin-right: 70px;
+}

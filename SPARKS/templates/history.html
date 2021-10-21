@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="navigation" content="width=device-width,initial-scale=1.0">
+        <title>PANKY</title>
+        <link rel="stylesheet" href="../static/css/history.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    </head>
+    <body>
+        <div class="container">
+            <header class="customer-header">
+                <div class="div-logo">
+                    <img src="../static/bank.png">
+                </div>
+                <nav class="customer-nav">
+                    <a href="{{url_for('Home')}}">Back</a>
+                    
+                </nav>
+
+            </header>
+            <h1 style="text-align: center;">TRANSACTION HISTORY</h1>
+        </div>
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th>SNO</th>
+                    <th>SENDER ACC</th>
+                    <th>SENDER NAME</th>
+                    <th>RECEIVER ACC</th>
+                    <th>RECEIVER NAME</th>
+                    <th>AMOUNT</th>
+                    <th>MESSAGE</th>
+                    </tr>
+                </thead>
+                <tbody>              
+
+                    {% set count = namespace(value=1) %}
+                    {% if out %}
+                    {% for data in out %}
+                    
+                    <tr>
+                        <td>{{ count.value }}</td>
+                        {% set count.value = count.value + 1 %}
+                        <td>{{ data.SenderAcc }}</td>
+                        <td>{{ data.SenderName }}</td>
+                        <td>{{ data.ReceiverAcc }}</td>
+                        <td>{{ data.ReceiverName }}</td>
+                        <td>{{ data.Amount }}</td>
+                        <td>{{ data.Message }}</td>
+                    </tr>
+                    
+                    {% endfor %}
+                    {% endif %}
+
+                </tbody>
+            </table>
+    
+        </div>
+        <footer class="footer">
+            <div class="footer-text">
+                Copyright@2021 sparks
+            </div>
+            <div class="footer-img">
+                <a href="http://www.facebook.com"><img src="../static/facebook.png"></a>
+                <a href="http://www.twitter.com"><img src="../static/twitter.png"></a>
+                <a href="http://www.instagram.com"><img src="../static/instagram.png"></a>
+            </div>
+        </footer>
+        <script>
+            function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+            }
+            </script>
+    </body>
+</html>
